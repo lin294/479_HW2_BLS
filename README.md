@@ -171,20 +171,17 @@ plot(lm2)
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-3-2.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-3-3.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-3-4.png)<!-- -->
 
 From the R output, we can see that the R^2 is 0.4597, which means that
-the features from bridges data (aka the count of bridges, mean of
-average daily traffic, mean of bridge roadway width, mean of roadway
-improvement cost, mean of total project cost, and mean of average daily
-truck traffic) have a decent power to predict the unemployment rate for
-each county in CA using a linear model. Looking at the p value for each
-beta, we notice that among all the variables, average daily truck
-traffic has a p values of less than 0.05, which means that it is
-statistically significant in this model. From the diagnosis plots, I
-notice that 6 and 13 are outliers in this data, as they sit far away
-from the majority of points, the qq plot and also in the leverage plot.
-6 refers to Colusa County, with unemployment rate of 15.5, and 13 refers
-to Imperial County, with unemployment rate of 17.7. Their unemployment
-rates are relatively large compared to other counties, causing them to
-be outliers.
+the features from bridges data have a decent power to predict the
+unemployment rate for each county in CA using a linear model. Looking at
+the p value for each beta, we notice that among all the variables,
+average daily truck traffic has a p values of less than 0.05, which
+means that it is statistically significant in this model. From the
+diagnosis plots, I notice that 6 and 13 are outliers in this data, as
+they sit far away from the majority of points, the qq plot and also in
+the leverage plot. 6 refers to Colusa County, with unemployment rate of
+15.5, and 13 refers to Imperial County, with unemployment rate of 17.7.
+Their unemployment rates are relatively large compared to other
+counties, causing them to be outliers.
 
 STEP 3: COUNTING INTO THE PREVIOUS MONTH
 
@@ -257,21 +254,18 @@ plot(lm3)
 ![](README_files/figure-gfm/unnamed-chunk-4-4.png)<!-- -->
 
 From the R output, we can see that the R^2 is 0.999, which means that
-the features from bridges data (aka the count of bridges, mean of
-average daily traffic, mean of bridge roadway width, mean of roadway
-improvement cost, mean of total project cost, and mean of average daily
-truck traffic) plus the unemployed number and rate from Nov have a
-perfect power to predict the number of unemployed in Dec for each county
-in CA using a linear model. R^2 for this model increases comparing to
-the first model without data from previous month. Looking at the p value
-for each beta, we notice that among all the variables, Nov’s unemployed
-number has a p value much less than 0.05, which means that it is the
-most statistically significant in this model. Other variables are not
-significant at all with the existance of Nov’s unemployed number in the
-model. In the diagnosis plots, point 27 stands out, which refers to
-Monterey County.
+the features from bridges data plus the unemployed number and rate from
+Nov have a perfect power to predict the number of unemployed in Dec for
+each county in CA using a linear model. R^2 for this model increases
+comparing to the first model without data from previous month. Looking
+at the p value for each beta, we notice that among all the variables,
+Nov’s unemployed number has a p value much less than 0.05, which means
+that it is the most statistically significant in this model. Other
+variables are not significant at all with the existence of Nov’s
+unemployed number in the model. In the diagnosis plots, point 27 stands
+out, which refers to Monterey County.
 
-Lastly, we fit a linear model to predict the number of employed (in
+Lastly, we fit a linear model to predict the unemployment rate (in
 DEC-2018) using the features from the bridges data, and the unemployed
 number and rate from the previous month as additional predictors.
 
@@ -335,17 +329,14 @@ plot(lm4)
 ![](README_files/figure-gfm/unnamed-chunk-5-4.png)<!-- -->
 
 From the R output, we can see that the R^2 is 0.9408, which means that
-the features from bridges data (aka the count of bridges, mean of
-average daily traffic, mean of bridge roadway width, mean of roadway
-improvement cost, mean of total project cost, and mean of average daily
-truck traffic) plus the unemployed number and rate from Nov have a
-perfect power to predict the unemployment rate in Dec for each county in
-CA using a linear model. R^2 for this model increases comparing to the
-second model without data from previous month. Looking at the p value
-for each beta, we notice that among all the variables, Nov’s
-unemployment rate has a p value much less than 0.05, which means that it
-is the most statistically significant in this model. Other variables are
-not significant at all with the existance of Nov’s unemployment rate in
-the model. From the diagnosis plots, I notice that 6, 13 and 27 are
-points that may cause problems, refering to Colusa County, Imperial
-County, and Monterey County respectively.
+the features from bridges data plus the unemployed number and rate from
+Nov have a great power to predict the unemployment rate in Dec for each
+county in CA using a linear model. R^2 for this model increases
+comparing to the second model without data from previous month. Looking
+at the p value for each beta, we notice that among all the variables,
+Nov’s unemployment rate has a p value much less than 0.05, which means
+that it is the most statistically significant in this model. Other
+variables are not significant at all with the existence of Nov’s
+unemployment rate in the model. From the diagnosis plots, I notice that
+6, 13 and 27 are 3 points that may cause problems, refering to Colusa
+County, Imperial County, and Monterey County respectively.
